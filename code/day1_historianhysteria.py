@@ -40,4 +40,4 @@ def day1(puzzle_input: str):
 
 day1(input_data_read("../text_inputs/day_1.txt"))
 
-# day1(EXAMPLE) # example input
+# day1(EXAMPLE) # example input here
