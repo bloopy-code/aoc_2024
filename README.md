@@ -11,7 +11,7 @@ Pre-Challenge Goals:
 
 | Day | Completed | Stars | Comments | 
 |-----|-----------|-------|----------|
-|Day 1 - Historian Hysteria | ✅ 01/12 | ⭐⭐ |Comepleted with 1 built-in library. Could be done maybe better with NumPy.|
+|Day 1 - Historian Hysteria | ✅ 01/12 | ⭐⭐ |Comepleted with 1 built-in library. Could be done maybe better with NumPy.<br>Rating: 😺 Easy|
 
 ## Notes & Reflections 
 
