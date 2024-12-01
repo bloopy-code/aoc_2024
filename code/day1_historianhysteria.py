@@ -14,8 +14,7 @@ EXAMPLE = """
 
 @rp
 def day1(puzzle_input: str):
-    """Day 1 AOC Solution
-    """
+    """Day 1 AOC Solution"""
     # split
     puzzleinput = puzzle_input.split()
 
@@ -27,19 +26,28 @@ def day1(puzzle_input: str):
     l2_sorted = sorted(l2)
 
     # differences
-    diffs = sum(abs(x-y) for x, y in zip(l1_sorted, l2_sorted))
+    diffs = sum(abs(x - y) for x, y in zip(l1_sorted, l2_sorted))
 
     # one liner for day 1 :)
-    day1_s1_oneliner = sum(abs(x-y) for x, y in zip(sorted(list(map(int, puzzle_input.split()[::2]))), sorted(list(map(int, puzzle_input.split()[1::2])))))
+    _day1_s1_oneliner = sum(
+        abs(x - y)
+        for x, y in zip(
+            sorted(list(map(int, puzzle_input.split()[::2]))),
+            sorted(list(map(int, puzzle_input.split()[1::2]))),
+        )
+    )
 
     # PART 2
     # counter of list 2
     l2_count = Counter(l2)
 
-    sim_scores = sum(x*l2_count[x] for x in l1)
+    sim_scores = sum(x * l2_count[x] for x in l1)
 
     # one liner for day 2 - verified - works! :)
-    day1_s2_oneliner = sum(x*Counter(list(map(int, puzzle_input.split()[1::2])))[x] for x in list(map(int, puzzle_input.split()[::2])))
+    _day1_s2_oneliner = sum(
+        x * Counter(list(map(int, puzzle_input.split()[1::2])))[x]
+        for x in list(map(int, puzzle_input.split()[::2]))
+    )
 
     return diffs, sim_scores
 
