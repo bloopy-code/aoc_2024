@@ -11,7 +11,7 @@ def input_data_read(filepath: str):
         str: string of puzzle input?
     """
     with open(filepath, "r", encoding="utf-8") as f:
-        return f.read()
+        return f.readlines()
 
 
 def rp(func):
