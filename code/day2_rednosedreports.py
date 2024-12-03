@@ -69,7 +69,7 @@ def day2(puzzle_input: str):
     # PART 2
     # create combos with one item removed
     def create_combos(report: list[int]):
-        """get all the combos of removing 1 item"""
+        """get all the combos of removing 1 item from report"""
         return [list(combo) for combo in combinations(report, len(report) - 1)]
 
     # create combos - then go through each combo pipeline
