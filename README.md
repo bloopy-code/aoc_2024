@@ -17,8 +17,8 @@ Pre-Challenge Goals:
 |Day 3 - Mull It Over | ✅ 03/12 | ⭐⭐ | Simpler than yesterdays one, but feel like wasn't very effective/pythonic with part 2.<br>Rating: 😺 Easy|
 
 ## Notes & Reflections
-[ ] give a try in another language
-[ ] sort out gitignore and requirements
+- [ ] give a try in another language
+- [ ] sort out gitignore and requirements
 
 ----
 
