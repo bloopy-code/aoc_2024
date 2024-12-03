@@ -15,9 +15,12 @@ EXAMPLE = """7 6 4 2 1
 @rp
 def day2(puzzle_input: str):
     """AoC Day 2 - Red Nosed Reports"""
+    # split puzzle input into lines
+    split_puzzle_input = puzzle_input.splitlines()
+
     # turn input into lists of ints
     reports = [
-        list(map(int, x.split())) for x in puzzle_input
+        list(map(int, x.split())) for x in split_puzzle_input
     ]  # add .splitlines() for example input
 
     def check_ascending_descending(report: list[int]):
