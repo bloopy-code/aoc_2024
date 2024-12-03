@@ -1,2 +1,5 @@
 
 requirements.txt
+__pycache__
+code/__pycache__/useful_functions.cpython-312.pyc
+/code/__pycache__
