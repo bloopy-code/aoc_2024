@@ -1,12 +1,12 @@
 """day 3 aoc - mull it over"""
 import re
-from useful_functions import rp, input_data_read
+from useful_functions import report_results, input_data_read
 
 EXAMPLE = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
 EXAMPLE2 = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
 
 
-@rp
+@report_results
 def day3(puzzle_input: str):
     """Day 3 AoC Solution - Mull It Over"""
     # regex to extract correct mul values
