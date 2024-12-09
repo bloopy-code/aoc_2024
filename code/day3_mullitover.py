@@ -2,8 +2,10 @@
 import re
 from useful_functions import report_results, input_data_read
 
-EXAMPLE = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
-EXAMPLE2 = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
+EXAMPLE = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)" "+mul(32,64]then(mul(11,8)mul(8,5))"
+EXAMPLE2 = (
+    "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)" "+mul(32,64](mul(11,8)undo()?mul(8,5))"
+)
 
 
 @report_results
@@ -29,6 +31,7 @@ def day3(puzzle_input: str):
 
     # PART 2
     # split & rejoin on 'do', remove any sections starting with n't (don't)
+    # THIS IS VERY LUCKY IT WORKS.
     new_instructions = "".join(
         [puzzle for puzzle in puzzle_input.split("do") if not puzzle.startswith("n't")]
     )
