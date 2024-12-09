@@ -1,7 +1,7 @@
 """day 2 aoc"""
 from itertools import combinations
 from functools import reduce
-from useful_functions import rp, input_data_read
+from useful_functions import report_results, input_data_read
 
 EXAMPLE = """7 6 4 2 1
 1 2 7 8 9
@@ -12,7 +12,7 @@ EXAMPLE = """7 6 4 2 1
 """
 
 
-@rp
+@report_results
 def day2(puzzle_input: str):
     """AoC Day 2 - Red Nosed Reports"""
     # split puzzle input into lines

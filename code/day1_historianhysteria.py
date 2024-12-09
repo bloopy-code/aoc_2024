@@ -1,6 +1,6 @@
 """day 1"""
 from collections import Counter
-from useful_functions import input_data_read, rp
+from useful_functions import input_data_read, report_results
 
 EXAMPLE = """
 3   4
@@ -12,7 +12,7 @@ EXAMPLE = """
 """
 
 
-@rp
+@report_results
 def day1(puzzle_input: str):
     """Day 1 AOC Solution"""
     # split
@@ -29,7 +29,7 @@ def day1(puzzle_input: str):
     diffs = sum(abs(x - y) for x, y in zip(l1_sorted, l2_sorted))
 
     # one liner for day 1 :)
-    _day1_s1_oneliner = sum(
+    _day1_s1_oneliner = sum(  # noqa: F841
         abs(x - y)
         for x, y in zip(
             sorted(list(map(int, puzzle_input.split()[::2]))),
@@ -44,7 +44,7 @@ def day1(puzzle_input: str):
     sim_scores = sum(x * l2_count[x] for x in l1)
 
     # one liner for day 2 - verified - works! :)
-    _day1_s2_oneliner = sum(
+    _day1_s2_oneliner = sum(  # noqa: F841
         x * Counter(list(map(int, puzzle_input.split()[1::2])))[x]
         for x in list(map(int, puzzle_input.split()[::2]))
     )

@@ -14,7 +14,7 @@ def input_data_read(filepath: str):
         return f.read()
 
 
-def rp(func):
+def report_results(func):
     """Wrapper to return results in CLI.
 
     Args:
