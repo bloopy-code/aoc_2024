@@ -16,11 +16,11 @@ EXAMPLE = """
 def day1(puzzle_input: str):
     """Day 1 AOC Solution"""
     # split
-    puzzleinput = puzzle_input.split()
+    puzzleinput: list[str] = puzzle_input.split()
 
     # sort into two groups & sort
-    l1 = list(map(int, puzzleinput[::2]))
-    l2 = list(map(int, puzzleinput[1::2]))
+    l1: list[int] = list(map(int, puzzleinput[::2]))
+    l2: list[int] = list(map(int, puzzleinput[1::2]))
 
     l1_sorted = sorted(l1)
     l2_sorted = sorted(l2)
