@@ -80,6 +80,7 @@ def day5(puzzle_input: str):
 
         return valid
 
+    # check rows are valid (pass) or not (fail)
     for row in rows:
         if is_valid_row(row):
             # if row obeys all its rules
@@ -88,6 +89,7 @@ def day5(puzzle_input: str):
             # if row fails rules
             fail_rows.append(row)
 
+    # this could be improved. come back to this part.
     def get_middle_value(row: list[int]):
         """Get middle value for each row"""
         result: int = 0
