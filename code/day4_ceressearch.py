@@ -2,6 +2,10 @@
 import re
 import useful_functions
 
+# set some types
+ListListStr = list[list[str]]
+Blah = dict[int, list[tuple[int, int]]]
+
 EXAMPLE: str = """MMMSXXMASM
 MSAMXMSMSA
 AMXSXMAAMM
@@ -21,12 +25,12 @@ PUZZLE_INPUT = useful_functions.input_data_read("../text_inputs/day_4.txt")
 def day4(puzzle_input: str) -> tuple[int, int]:
     """Day 4 'solution'"""
     # split puzzle input into horizontal and vertical lines
-    horizontal_lines: list[list[str]] = [list(x) for x in puzzle_input.splitlines()]
-    vertical_lines: list[list[str]] = [list(x) for x in zip(*horizontal_lines)]
+    horizontal_lines: ListListStr = [list(x) for x in puzzle_input.splitlines()]
+    vertical_lines: ListListStr = [list(x) for x in zip(*horizontal_lines)]
 
     # get half of the diagonal coordinates from 0,0
     def get_diagonal_coordinates(
-        input_lines: list[list[str]],
+        input_lines: ListListStr,
     ) -> dict[int, list[tuple[int, int]]]:
         coordinates: dict[int, list[tuple[int, int]]] = {}
         for index in range(len(input_lines)):
@@ -44,9 +48,9 @@ def day4(puzzle_input: str) -> tuple[int, int]:
 
     # use diagonal coordinates to get corresponding values
     def get_diagonals(
-        coords: dict[int, list[tuple[int, int]]], input_lines: list[list[str]]
-    ) -> list[list[str]]:
-        diagonals: list[list[str]] = []
+        coords: dict[int, list[tuple[int, int]]], input_lines: ListListStr
+    ) -> ListListStr:
+        diagonals: ListListStr = []
         for coord_level in coords.values():
             xy_list: list[str] = []
             for coord in coord_level:
@@ -55,34 +59,32 @@ def day4(puzzle_input: str) -> tuple[int, int]:
         return diagonals
 
     # get half of the diagonals from 0,0
-    diagonals_top_left: list[list[str]] = get_diagonals(
-        diagonal_coords, horizontal_lines
-    )
+    diagonals_top_left: ListListStr = get_diagonals(diagonal_coords, horizontal_lines)
 
     # get half diagonals from max(x), max(y)
     # need to flip/reverse horizontal lines to
     # ensure the bottom right is now top left
-    horizontal_lines_flip_reverse: list[list[str]] = [
+    horizontal_lines_flip_reverse: ListListStr = [
         list(x)[::-1] for x in puzzle_input.splitlines()[::-1]
     ]
 
-    diagonals_bottom_right: list[list[str]] = get_diagonals(
+    diagonals_bottom_right: ListListStr = get_diagonals(
         diagonal_coords, horizontal_lines_flip_reverse
     )
 
     # reverse order of horizontal lines to get
     # diagonals from max(y), 0 as 0,0
-    diagonals_bottom_left: list[list[str]] = get_diagonals(
+    diagonals_bottom_left: ListListStr = get_diagonals(
         diagonal_coords, horizontal_lines[::-1]
     )
 
     # get other half of those above
-    diagonals_top_right: list[list[str]] = get_diagonals(
+    diagonals_top_right: ListListStr = get_diagonals(
         diagonal_coords, horizontal_lines_flip_reverse[::-1]
     )
 
     # join those together in a reasonable fashion
-    lines: list[list[list[str]]] = [
+    lines: list[ListListStr] = [
         horizontal_lines,
         vertical_lines,
         diagonals_top_left
@@ -92,7 +94,7 @@ def day4(puzzle_input: str) -> tuple[int, int]:
     ]
 
     # check for XMAS
-    def has_xmas(lines: list[list[str]]):
+    def has_xmas(lines: ListListStr):
         """Check if XMAS in input for forward and reverse lines"""
         # rejoin strings and reverse for both direction check
         joined_strings: list[str] = ["".join(x) for x in lines]

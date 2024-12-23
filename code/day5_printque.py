@@ -43,7 +43,7 @@ def day5(puzzle_input: str):
     rules_str: list[str] = rule_input.splitlines()
     rows_str: list[str] = row_input.splitlines()
 
-    # parse rules into list because order matters
+    # parse rules into list
     rules: list[list[int]] = [list(map(int, x.split("|"))) for x in rules_str]
 
     # parse rows into list of ints
