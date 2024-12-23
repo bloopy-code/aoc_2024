@@ -22,16 +22,14 @@ EXAMPLE: str = """
 """.strip()
 
 # read puzzle input from text
-PUZZLE_INPUT: str = useful_functions.input_data_read(
-    "../text_inputs/day_6.txt"
-)
+PUZZLE_INPUT: str = useful_functions.input_data_read("../text_inputs/day_6.txt")
 
 # split input into rows
 puzzle_data: PuzzleRows = EXAMPLE.splitlines()
 # puzzle_data: PuzzleRows = PUZZLE_INPUT.splitlines()
 
 # cycle iterator for progressing through direction
-direction_order = itertools.cycle(['up', 'right', 'down', 'left'])
+direction_order = itertools.cycle(["up", "right", "down", "left"])
 
 
 def get_start_index(puzzle: PuzzleRows):
@@ -40,8 +38,8 @@ def get_start_index(puzzle: PuzzleRows):
     For puzzle purposes - have assumed will always be facing up.
     """
     for i, row in enumerate(puzzle):
-        if '^' in row:
-            return row.index('^'), i
+        if "^" in row:
+            return row.index("^"), i
 
 
 def get_blockers(i: int, puzzle_input_row: str):
@@ -50,18 +48,14 @@ def get_blockers(i: int, puzzle_input_row: str):
     """
     # for one row
     obstacles = [
-        (
-            index, i
-        ) for index, step in enumerate(puzzle_input_row) if step == "#"
-        ]
+        (index, i) for index, step in enumerate(puzzle_input_row) if step == "#"
+    ]
     return tuple(itertools.chain(*obstacles)) if obstacles else None
 
 
 def move_guard_one_step(
-        grid: PuzzleRows,
-        guard_position: tuple[int, int],
-        direction: str
-        ):
+    grid: PuzzleRows, guard_position: tuple[int, int], direction: str
+):
     """
     Move the guard one step in the current direction.
     If blocked, turn 90° clockwise - aka cycle next direction.
@@ -92,14 +86,14 @@ def move_guard_one_step(
 
 
 def display_grid(
-        grid: PuzzleRows,
-        guard_pos: tuple[int, int],
-        visited: set[tuple[int, int]],
-        revisited: set[tuple[int, int]],
-        distinct_counter: int,
-        step_counter: int,
-        direction: str,
-        escaped=False
+    grid: PuzzleRows,
+    guard_pos: tuple[int, int],
+    visited: set[tuple[int, int]],
+    revisited: set[tuple[int, int]],
+    distinct_counter: int,
+    step_counter: int,
+    direction: str,
+    escaped=False,
 ):
     """
     Display the grid with the guard's position/blockers.
@@ -108,13 +102,7 @@ def display_grid(
     os.system("cls" if os.name == "nt" else "clear")  # clear screen
 
     # sprites for direction and escape!
-    marker_map = {
-        "up": "^",
-        "down": "v",
-        "left": "<",
-        "right": ">",
-        "escaped": "⭐"
-    }
+    marker_map = {"up": "^", "down": "v", "left": "<", "right": ">", "escaped": "⭐"}
 
     if escaped is True:
         direction = "escaped"
@@ -137,8 +125,9 @@ def display_grid(
         print(line)
 
     # print counters, current pos and distinct visits
-    print(f"\nSteps: {step_counter} | Current X,Y {guard_pos} ",
-          f"| Distinct Places Visited: {distinct_counter+1}"
+    print(
+        f"\nSteps: {step_counter} | Current X,Y {guard_pos} ",
+        f"| Distinct Places Visited: {distinct_counter+1}",
     )
 
 
@@ -183,10 +172,13 @@ def escape(grid: PuzzleRows):
 
         # display grid
         display_grid(
-            grid, guard_pos,
-            visited, revisited,
-            distinct_counter, step_counter,
-            direction
+            grid,
+            guard_pos,
+            visited,
+            revisited,
+            distinct_counter,
+            step_counter,
+            direction,
         )
 
         # move one step
@@ -196,10 +188,14 @@ def escape(grid: PuzzleRows):
         # if reach edge - you've escaped!
         if guard_pos in get_edges(grid):
             display_grid(
-                grid, guard_pos,
-                visited, revisited,
-                distinct_counter, step_counter,
-                direction, escaped=True
+                grid,
+                guard_pos,
+                visited,
+                revisited,
+                distinct_counter,
+                step_counter,
+                direction,
+                escaped=True,
             )
             print("\nThe guard has escaped!")
             break
