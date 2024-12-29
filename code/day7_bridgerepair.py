@@ -18,9 +18,7 @@ EXAMPLE_INPUT = """
 # Custom type
 OpCombo = list[list[tuple[str, int] | tuple[int, ...]]]
 
-PUZZLE_INPUT: str = useful_functions.input_data_read(
-    "../text_inputs/day_7.txt"
-)
+PUZZLE_INPUT: str = useful_functions.input_data_read("../text_inputs/day_7.txt")
 _puzzle_data: list[str] = EXAMPLE_INPUT.splitlines()  # Example puzzle data
 puzzle_data: list[str] = PUZZLE_INPUT.splitlines()
 
@@ -36,10 +34,7 @@ def day_7(puzzle_input: list[str]) -> tuple[int, int]:
         for row in puzzle:
             value, operators = row.split(":")
             calibrations.append(
-                {
-                    "value": int(value),
-                    "operations": list(map(int, operators.split()))
-                }
+                {"value": int(value), "operations": list(map(int, operators.split()))}
             )
         return calibrations
 
