@@ -19,7 +19,7 @@ EXAMPLE_INPUT = """
 OpCombo = list[list[tuple[str, int] | tuple[int, ...]]]
 
 PUZZLE_INPUT: str = useful_functions.input_data_read("../text_inputs/day_7.txt")
-_puzzle_data: list[str] = EXAMPLE_INPUT.splitlines()  # Example puzzle data!
+_puzzle_data: list[str] = EXAMPLE_INPUT.splitlines()  # Example puzzle data
 puzzle_data: list[str] = PUZZLE_INPUT.splitlines()
 
 
