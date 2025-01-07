@@ -19,7 +19,7 @@ Pre-Challenge Goals:
 |Day 5 - Print Queue | ✅ 09/12/24 (Part 1)<br>12/12/24 (Part 2) | ⭐⭐ | Part 2 takes a little while, very inefficient. Part 1 was easy enough, still overall easier than Day 4. Not rating easy because solved very inefficiently.<br>Rating:😾 A bit tricky!| 
 |Day 6 - Guard Gallivant | ♒ 23/12\24 (Part 1)<br>❌ Part 2 | ⭐ | Part 1 took me a lot of thinking and research to do, Part 2 I can't think of any way to do it that won't take 10 million years. Brain not braining. Will revisit later!<br>Rating: 🙀 Hard! |
 |Day 7 - Bridge Repair | ✅ 29/12/24 | ⭐⭐ | Not so bad, but need to remember to <b>READ THE WHOLE BRIEF</b>. Tripped up on two minor things from not thinking properly, and overcomplicated Part 2 initially. Takes a while due to not coding very efficiently, which appears to be a running theme of mine so when all Days are complete, may revisit to beat times!<br>Rating: 😺 Easyish|
-|Day 8 - Resonant Collinearity | ✅ 07/01/25 | ⭐⭐| Part 1, no problemo. Part 2? In my head, no problemo. For some silly reason, in code, problemo. Simplified approach, rebrained brain. Will mark as easyish as knew what to do but lacked the braincells to do it...<br>😺 Easyish (but should have been easy peasy!|
+|Day 8 - Resonant Collinearity | ✅ 07/01/25 | ⭐⭐| Part 1, no problemo. Part 2? In my head, no problemo. For some silly reason, in code, problemo. Simplified approach, rebrained brain. Will mark as easyish as knew what to do but lacked the braincells to do it...<br>Rating: 😺 Easyish (but should have been easy peasy!|
 
 
 ## Notes & Reflections
